@@ -9,10 +9,7 @@ const server = http.createServer(app);
 
 const port = process.env.PORT ? parseInt(process.env.PORT) : 5000;
 
-// app.use(express.urlencoded({extended: true}));
-// app.use(express.json());
-
-app.use('/api', uploadRouter);
+app.use('/', uploadRouter);
 
 server.listen(port, () => {
     console.info(`Server is up on ${port}`);

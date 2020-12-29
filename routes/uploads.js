@@ -1,8 +1,11 @@
 const { Router } = require('express')
-const { upload: uploadController } = require('../controllers/uploads')
+const {
+    upload: uploadController,
+    formUpload: formUploadController} = require('../controllers/uploads')
 
 const router = Router()
 
-router.post('/upload', uploadController)
+router.post('/raw/:filename', uploadController)
+router.post('/form-upload', formUploadController)
 
 module.exports = router
